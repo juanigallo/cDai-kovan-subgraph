@@ -22,6 +22,7 @@ export function handleApproval(event: Approval): void {
   let approval = new ApprovalEntity(generatedId);
   approval.address = event.params.spender;
   approval.amount = event.params.amount;
+  approval.save();
 }
 
 export function handleBorrow(event: Borrow): void {
@@ -32,6 +33,7 @@ export function handleBorrow(event: Borrow): void {
   let borrow = new BorrowEntity(generatedId);
   borrow.address = event.params.borrower;
   borrow.amount = event.params.borrowAmount;
+  borrow.save();
 }
 
 export function handleMint(event: Mint): void {
@@ -43,6 +45,7 @@ export function handleMint(event: Mint): void {
   mint.address = event.params.minter;
   mint.amount = event.params.mintAmount;
   mint.tokens = event.params.mintTokens;
+  mint.save();
 }
 
 export function handleRedeem(event: Redeem): void {
@@ -54,6 +57,7 @@ export function handleRedeem(event: Redeem): void {
   redeem.address = event.params.redeemer;
   redeem.amount = event.params.redeemAmount;
   redeem.tokens = event.params.redeemTokens;
+  redeem.save();
 }
 
 export function handleRepayBorrow(event: RepayBorrow): void {
@@ -65,4 +69,5 @@ export function handleRepayBorrow(event: RepayBorrow): void {
   repay.payer = event.params.payer;
   repay.borrower = event.params.borrower;
   repay.amount = event.params.repayAmount;
+  repay.save();
 }
