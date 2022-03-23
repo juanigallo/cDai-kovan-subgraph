@@ -1,6 +1,32 @@
-type ExampleEntity @entity {
+type ApprovalEntity @entity {
   id: ID!
-  count: BigInt!
-  cashPrior: BigInt! # uint256
-  interestAccumulated: BigInt! # uint256
+  address: Bytes!
+  amount: BigInt!
+}
+
+type BorrowEntity @entity {
+  id: ID!
+  address: Bytes!
+  amount: BigInt!
+}
+
+type MintEntity @entity {
+  id: ID!
+  address: Bytes!
+  amount: BigInt!
+  tokens: BigInt!
+}
+
+type RedeemEntity @entity {
+  id: ID!
+  address: Bytes!
+  amount: BigInt!
+  tokens: BigInt!
+}
+
+type RepayEntity @entity {
+  id: ID!
+  payer: Bytes!
+  borrower: Bytes!
+  amount: BigInt!
 }
